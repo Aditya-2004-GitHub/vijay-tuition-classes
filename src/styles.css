@@ -1,1 +1,85 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --navy: #111e38;
+  --navy-mid: #1a2a4a;
+  --navy-light: #243558;
+  --pink: #d0306a;
+  --pink-h: #e8527e;
+  --pink-pale: #fce8f0;
+  --cream: #f7f5f1;
+  --white: #fff;
+  --off: #f0f3f8;
+  --txt: #374151;
+  --muted: #6b7280;
+  --border: #e5e9f2;
+  --sh-sm: 0 2px 12px rgba(17, 30, 56, .08);
+  --sh-md: 0 8px 32px rgba(17, 30, 56, .13);
+  --sh-lg: 0 20px 60px rgba(17, 30, 56, .18);
+  --tr: .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--txt);
+  overflow-x: hidden
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Fraunces', serif;
+  line-height: 1.15
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s ease, transform .7s ease
+}
+
+.reveal.d1 {
+  transition-delay: .1s
+}
+
+.reveal.d2 {
+  transition-delay: .2s
+}
+
+.reveal.d3 {
+  transition-delay: .3s
+}
+
+.reveal.d4 {
+  transition-delay: .4s
+}
+
+.reveal.d5 {
+  transition-delay: .5s
+}
+
+.reveal.up {
+  opacity: 1;
+  transform: translateY(0)
+}

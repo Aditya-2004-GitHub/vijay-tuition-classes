@@ -1,0 +1,215 @@
+<section class="pg-hero">
+  <div class="container pg-hero-content">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="pg-tag reveal"><i class="fas fa-images me-1"></i>Gallery</div>
+        <h1 class="reveal">Life at <span>Vijay Classes</span></h1>
+        <p class="reveal d1">Visual proof of our vibrant learning environment — classrooms, events, seminars, award
+          ceremonies, and doubt sessions.</p>
+      </div>
+    </div>
+  </div>
+  <div class="hero-diag"></div>
+</section>
+
+<!-- CATEGORY CARDS -->
+<section class="vtc-sec" style="padding-bottom:1rem">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-4">
+      <div class="col-lg-6 reveal">
+        <div class="eyebrow">Browse by Category</div>
+        <h2 class="sec-h">Our <span>Photo Gallery</span></h2>
+        <div class="pink-rule cx"></div>
+      </div>
+    </div>
+    <div class="row g-3 mb-4">
+      <div class="col-sm-6 col-lg-3 reveal d1">
+        <div class="cat-card" (click)="setTab('classroom')">
+          <div class="cat-ico"><i class="fas fa-chalkboard-teacher"></i></div>
+          <div>
+            <div class="cat-label">Classroom Sessions</div>
+            <div class="cat-count">12 Photos</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal d2">
+        <div class="cat-card" (click)="setTab('events')">
+          <div class="cat-ico"><i class="fas fa-trophy"></i></div>
+          <div>
+            <div class="cat-label">Events & Ceremonies</div>
+            <div class="cat-count">8 Photos</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal d3">
+        <div class="cat-card" (click)="setTab('seminars')">
+          <div class="cat-ico"><i class="fas fa-microphone"></i></div>
+          <div>
+            <div class="cat-label">Seminars & Talks</div>
+            <div class="cat-count">6 Photos</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal d4">
+        <div class="cat-card" (click)="setTab('doubt')">
+          <div class="cat-ico"><i class="fas fa-question-circle"></i></div>
+          <div>
+            <div class="cat-label">Doubt Sessions</div>
+            <div class="cat-count">5 Photos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gtabs reveal">
+      <button class="gtab active" [class.active]="activeTab === 'all'" (click)="setTab('all')">All Photos</button>
+      <button class="gtab" [class.active]="activeTab === 'classroom'" (click)="setTab('classroom')">Classroom</button>
+      <button class="gtab" [class.active]="activeTab === 'events'" (click)="setTab('events')">Events</button>
+      <button class="gtab" [class.active]="activeTab === 'seminars'" (click)="setTab('seminars')">Seminars</button>
+      <button class="gtab" [class.active]="activeTab === 'doubt'" (click)="setTab('doubt')">Doubt Sessions</button>
+      <button class="gtab" [class.active]="activeTab === 'toppers'" (click)="setTab('toppers')">Toppers</button>
+    </div>
+    <div class="gal-masonry reveal" id="gallery-masonry">
+      <div class="gal-item" [hidden]="!isVisible('classroom')">
+        <div class="gal-ph gp1 tall"><i class="fas fa-chalkboard-teacher"></i>Classroom Sessions</div>
+        <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
+      </div>
+      <div class="gal-item" data-cat="events" [hidden]="!isVisible('events')">
+        <div class="gal-ph gp2"><i class="fas fa-trophy"></i>Annual Prize Distribution</div>
+        <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
+      </div>
+      <div class="gal-item" data-cat="seminars" [hidden]="!isVisible('seminars')">
+        <div class="gal-ph gp3 tall"><i class="fas fa-microphone"></i>Career Guidance Seminar</div>
+        <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
+      </div>
+      <div class="gal-item" data-cat="toppers" [hidden]="!isVisible('toppers')">
+        <div class="gal-ph gp4"><i class="fas fa-star"></i>Toppers Felicitation 2024</div>
+        <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
+      </div>
+      <div class="gal-item" data-cat="doubt" [hidden]="!isVisible('doubt')">
+        <div class="gal-ph gp5 tall"><i class="fas fa-question-circle"></i>Sunday Doubt Session</div>
+        <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
+      </div>
+      <div class="gal-item" data-cat="classroom" [hidden]="!isVisible('classroom')">
+        <div class="gal-ph gp6"><i class="fas fa-users"></i>Group Study Session</div>
+        <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
+      </div>
+      <div class="gal-item" data-cat="events" [hidden]="!isVisible('events')">
+        <div class="gal-ph gp7"><i class="fas fa-graduation-cap"></i>Annual Day Function</div>
+        <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
+      </div>
+      <div class="gal-item" data-cat="seminars" [hidden]="!isVisible('seminars')">
+        <div class="gal-ph gp8"><i class="fas fa-lightbulb"></i>Motivational Talk Session</div>
+        <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
+      </div>
+      <div class="gal-item" data-cat="classroom" [hidden]="!isVisible('classroom')">
+        <div class="gal-ph gp9 tall"><i class="fas fa-flask"></i>Science Lab Practice</div>
+        <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
+      </div>
+      <div class="gal-item" data-cat="toppers" [hidden]="!isVisible('toppers')">
+        <div class="gal-ph gp10"><i class="fas fa-certificate"></i>Board Result Celebration</div>
+        <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
+      </div>
+      <div class="gal-item" data-cat="doubt" [hidden]="!isVisible('doubt')">
+        <div class="gal-ph gp11"><i class="fas fa-comments"></i>One-on-One Doubt Session</div>
+        <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
+      </div>
+      <div class="gal-item" data-cat="events" [hidden]="!isVisible('events')">
+        <div class="gal-ph gp12 tall"><i class="fas fa-award"></i>Merit Award Ceremony</div>
+        <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
+      </div>
+    </div>
+    <p class="text-center mt-4 reveal" style="font-size:.8rem;color:var(--muted)">📸 Replace placeholder blocks with
+      real <code>&lt;img&gt;</code> tags to display your actual photos</p>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" [class.active]="lightboxOpen" (click)="closeLightbox()">
+
+  <div class="lb-box" (click)="$event.stopPropagation()">
+
+    <button class="lb-close" (click)="closeLightbox()">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <div class="lb-ph">
+      <i class="fas fa-image"></i>
+      <p>Replace with actual image</p>
+    </div>
+
+    <div class="lb-title">{{ lightboxTitle }}</div>
+    <div class="lb-sub">{{ lightboxCategory }}</div>
+
+  </div>
+</div>
+
+<!-- FACILITIES -->
+<section class="vtc-sec alt">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-6 reveal">
+        <div class="eyebrow">Our Facilities</div>
+        <h2 class="sec-h">Our <span>Learning Space</span></h2>
+        <div class="pink-rule cx"></div>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 reveal d1">
+        <div style="background:var(--navy);border-radius:18px;padding:2rem;height:100%">
+          <div
+            style="width:52px;height:52px;border-radius:14px;background:rgba(208,48,106,.15);color:var(--pink);display:grid;place-items:center;font-size:1.3rem;margin-bottom:1rem">
+            <i class="fas fa-door-open"></i>
+          </div>
+          <h5 style="color:#fff;font-family:'Fraunces',serif;font-size:1rem;margin-bottom:.5rem">Spacious Classrooms
+          </h5>
+          <p style="color:rgba(255,255,255,.5);font-size:.83rem;line-height:1.65">Well-ventilated, brightly lit
+            classrooms with proper seating for 20 students, whiteboard, and projector facility.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal d2">
+        <div style="background:var(--navy);border-radius:18px;padding:2rem;height:100%">
+          <div
+            style="width:52px;height:52px;border-radius:14px;background:rgba(208,48,106,.15);color:var(--pink);display:grid;place-items:center;font-size:1.3rem;margin-bottom:1rem">
+            <i class="fas fa-book-reader"></i>
+          </div>
+          <h5 style="color:#fff;font-family:'Fraunces',serif;font-size:1rem;margin-bottom:.5rem">Study Resource
+            Library</h5>
+          <p style="color:rgba(255,255,255,.5);font-size:.83rem;line-height:1.65">Reference books, solved papers, and
+            study material available for all students to use during free periods and weekends.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal d3">
+        <div style="background:var(--navy);border-radius:18px;padding:2rem;height:100%">
+          <div
+            style="width:52px;height:52px;border-radius:14px;background:rgba(208,48,106,.15);color:var(--pink);display:grid;place-items:center;font-size:1.3rem;margin-bottom:1rem">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <h5 style="color:#fff;font-family:'Fraunces',serif;font-size:1rem;margin-bottom:.5rem">Digital Learning
+            Tools</h5>
+          <p style="color:rgba(255,255,255,.5);font-size:.83rem;line-height:1.65">Projector-assisted teaching for
+            complex diagrams, video explanations, and digital test practice for board exam preparation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="vtc-sec">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center reveal">
+        <div class="eyebrow" style="justify-content:center">Visit Us</div>
+        <h2 class="sec-h">See It <span>For Yourself</span></h2>
+        <div class="pink-rule cx"></div>
+        <p class="sec-desc mx-auto mb-4">Come visit our coaching centre and experience the environment in person. Book
+          a free demo class today.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="admission.html" class="btn-pink"><i class="fas fa-calendar-check me-2"></i>Book a Visit</a>
+          <a href="contact.html" class="btn-pink" style="background:var(--navy);box-shadow:none"><i
+              class="fas fa-directions me-2"></i>Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
