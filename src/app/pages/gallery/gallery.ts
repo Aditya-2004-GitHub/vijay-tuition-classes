@@ -54,10 +54,8 @@ export class Gallery implements AfterViewInit {
   }
 
   // OPEN LIGHTBOX
-  openLightbox(item: HTMLElement, category: string) {
-    const text = item.innerText || '';
-
-    this.lightboxTitle = text.trim();
+  openLightbox(title: string, category: string) {
+    this.lightboxTitle = title;
     this.lightboxCategory = 'Category: ' + category;
     this.lightboxOpen = true;
   }

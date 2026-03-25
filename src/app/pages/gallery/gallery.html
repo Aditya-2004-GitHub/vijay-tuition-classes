@@ -69,51 +69,63 @@
       <button class="gtab" [class.active]="activeTab === 'toppers'" (click)="setTab('toppers')">Toppers</button>
     </div>
     <div class="gal-masonry reveal" id="gallery-masonry">
-      <div class="gal-item" [hidden]="!isVisible('classroom')">
+      <div class="gal-item" [hidden]="!isVisible('classroom')"
+        (click)="openLightbox('Classroom Sessions', 'Classroom')">
         <div class="gal-ph gp1 tall"><i class="fas fa-chalkboard-teacher"></i>Classroom Sessions</div>
         <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
       </div>
-      <div class="gal-item" data-cat="events" [hidden]="!isVisible('events')">
+      <div class="gal-item" data-cat="events" [hidden]="!isVisible('events')"
+        (click)="openLightbox('Annual Prize Distribution', 'Events')">
         <div class="gal-ph gp2"><i class="fas fa-trophy"></i>Annual Prize Distribution</div>
         <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
       </div>
-      <div class="gal-item" data-cat="seminars" [hidden]="!isVisible('seminars')">
+      <div class="gal-item" data-cat="seminars" [hidden]="!isVisible('seminars')"
+        (click)="openLightbox('Career Guidance Seminar', 'Seminars')">
         <div class="gal-ph gp3 tall"><i class="fas fa-microphone"></i>Career Guidance Seminar</div>
         <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
       </div>
-      <div class="gal-item" data-cat="toppers" [hidden]="!isVisible('toppers')">
+      <div class="gal-item" data-cat="toppers" [hidden]="!isVisible('toppers')"
+        (click)="openLightbox('Toppers Felicitation 2024', 'Toppers')">
         <div class="gal-ph gp4"><i class="fas fa-star"></i>Toppers Felicitation 2024</div>
         <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
       </div>
-      <div class="gal-item" data-cat="doubt" [hidden]="!isVisible('doubt')">
+      <div class="gal-item" data-cat="doubt" [hidden]="!isVisible('doubt')"
+        (click)="openLightbox('Sunday Doubt Session', 'Doubt Sessions')">
         <div class="gal-ph gp5 tall"><i class="fas fa-question-circle"></i>Sunday Doubt Session</div>
         <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
       </div>
-      <div class="gal-item" data-cat="classroom" [hidden]="!isVisible('classroom')">
+      <div class="gal-item" data-cat="classroom" [hidden]="!isVisible('classroom')"
+        (click)="openLightbox('Group Study Session', 'Classroom')">
         <div class="gal-ph gp6"><i class="fas fa-users"></i>Group Study Session</div>
         <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
       </div>
-      <div class="gal-item" data-cat="events" [hidden]="!isVisible('events')">
+      <div class="gal-item" data-cat="events" [hidden]="!isVisible('events')"
+        (click)="openLightbox('Annual Day Function', 'Events')">
         <div class="gal-ph gp7"><i class="fas fa-graduation-cap"></i>Annual Day Function</div>
         <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
       </div>
-      <div class="gal-item" data-cat="seminars" [hidden]="!isVisible('seminars')">
+      <div class="gal-item" data-cat="seminars" [hidden]="!isVisible('seminars')"
+        (click)="openLightbox('Motivational Talk Session', 'Seminars')">
         <div class="gal-ph gp8"><i class="fas fa-lightbulb"></i>Motivational Talk Session</div>
         <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
       </div>
-      <div class="gal-item" data-cat="classroom" [hidden]="!isVisible('classroom')">
+      <div class="gal-item" data-cat="classroom" [hidden]="!isVisible('classroom')"
+        (click)="openLightbox('Science Lab Practice', 'Classroom')">
         <div class="gal-ph gp9 tall"><i class="fas fa-flask"></i>Science Lab Practice</div>
         <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
       </div>
-      <div class="gal-item" data-cat="toppers" [hidden]="!isVisible('toppers')">
+      <div class="gal-item" data-cat="toppers" [hidden]="!isVisible('toppers')"
+        (click)="openLightbox('Board Result Celebration', 'Toppers')">
         <div class="gal-ph gp10"><i class="fas fa-certificate"></i>Board Result Celebration</div>
         <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
       </div>
-      <div class="gal-item" data-cat="doubt" [hidden]="!isVisible('doubt')">
+      <div class="gal-item" data-cat="doubt" [hidden]="!isVisible('doubt')"
+        (click)="openLightbox('One-on-One Doubt Session', 'Doubt Sessions')">
         <div class="gal-ph gp11"><i class="fas fa-comments"></i>One-on-One Doubt Session</div>
         <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
       </div>
-      <div class="gal-item" data-cat="events" [hidden]="!isVisible('events')">
+      <div class="gal-item" data-cat="events" [hidden]="!isVisible('events')"
+        (click)="openLightbox('Merit Award Ceremony', 'Events')">
         <div class="gal-ph gp12 tall"><i class="fas fa-award"></i>Merit Award Ceremony</div>
         <div class="gal-overlay"><i class="fas fa-expand-alt"></i><span>View Photo</span></div>
       </div>
