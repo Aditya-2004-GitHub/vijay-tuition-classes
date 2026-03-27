@@ -1,14 +1,36 @@
 <!-- LOADER -->
-<!-- <div id="loader">
+<div id="loader">
   <div class="ld-logo">Vijay <span>Classes</span></div>
   <div class="ld-bar">
     <div class="ld-prog"></div>
   </div>
-</div> -->
+</div>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero">
+
+    <!-- IDEA 1: Pure CSS Background Carousel (Active) -->
+    <div class="hero-bg-carousel">
+      <div class="bg-slide" style="background-image: url('assets/hero-bg-1.jpeg'); animation-delay: 0s;"></div>
+      <div class="bg-slide" style="background-image: url('assets/hero-bg-2.jpeg'); animation-delay: 4s;"></div>
+      <div class="bg-slide" style="background-image: url('assets/hero-bg-3.jpeg'); animation-delay: 8s;"></div>
+      <div class="bg-slide" style="background-image: url('assets/hero-bg-4.jpeg'); animation-delay: 12s;"></div>
+      <!-- <div class="bg-slide" style="background-image: url('assets/hero-bg-5.jpeg'); animation-delay: 16s;"></div> -->
+    </div>
+
+    <!-- IDEA 2: TypeScript Driven Background Carousel (Commented Out) -->
+    <!--
+    <div class="hero-bg-carousel-ts">
+      <div class="bg-slide-ts" [class.active]="currentSlide === 0" style="background-image: url('assets/hero-bg-1.jpeg');"></div>
+      <div class="bg-slide-ts" [class.active]="currentSlide === 1" style="background-image: url('assets/hero-bg-2.jpeg');"></div>
+      <div class="bg-slide-ts" [class.active]="currentSlide === 2" style="background-image: url('assets/hero-bg-3.jpeg');"></div>
+      <div class="bg-slide-ts" [class.active]="currentSlide === 3" style="background-image: url('assets/hero-bg-4.jpeg');"></div>
+      <div class="bg-slide-ts" [class.active]="currentSlide === 4" style="background-image: url('assets/hero-bg-5.jpeg');"></div>
+      <div class="bg-overlay"></div>
+    </div>
+    -->
+
     <div class="hero-grid"></div>
     <div class="geo1"></div>
     <div class="geo2"></div>
@@ -18,11 +40,14 @@
         <div class="col-lg-6 hero-content px-3">
           <div class="hero-pill"><span class="dot"></span>Vijay Leads to Victory — Since 1998</div>
           <h1 class="hero-h1">Unlock Your<br><span class="acc">Academic</span><br>Potential</h1>
-          <p class="hero-tag">Expert coaching for Class 2nd to 12th. Science, Commerce, Maths, English & SST for CBSE, STATE & ICSE boards — taught by 25+ year experienced faculty.</p>
+          <p class="hero-tag">Expert coaching for Class 2nd to 12th. Science, Commerce, Maths, English & SST for CBSE,
+            STATE & ICSE boards — taught by 25+ year experienced faculty.</p>
           <div class="hero-btns">
-            <a routerLink="/courses" class="btn-pink"><i class="fas fa-graduation-cap"></i> Explore Courses</a>
-            <a routerLink="/admission" class="btn-ghost"><i class="fas fa-clipboard-list"></i> Free Demo Class</a>
-            <a href="tel:+919860333185" class="phone-chip"><i class="fas fa-phone-alt"></i>+91 98603 33185</a>
+            <a routerLink="/courses" fragment="all-courses" class="btn-pink"><i class="fas fa-graduation-cap"></i>
+              Explore Courses</a>
+            <a routerLink="/admission" fragment="demo-section" class="btn-ghost"><i class="fas fa-clipboard-list"></i>
+              Free Demo Class</a>
+            <a href="tel:+919371013687" class="phone-chip"><i class="fas fa-phone-alt"></i>+91 93710 13687</a>
           </div>
           <div class="hero-stats">
             <div>
@@ -34,7 +59,7 @@
               <div class="hst-lbl">Pass Rate</div>
             </div>
             <div>
-              <div class="hst-num" data-target="26" data-suffix="+">0</div>
+              <div class="hst-num" data-target="25" data-suffix="+">0</div>
               <div class="hst-lbl">Years Exp</div>
             </div>
             <div>
@@ -43,64 +68,11 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6 hero-visual d-flex justify-content-center">
-          <div style="position:relative;width:100%;max-width:420px">
-            <div class="hv-card">
-              <span class="hv-emoji">📢</span>
-              <div class="hv-title">ADMISSION OPEN</div>
-              <div class="hv-sub">For CBSE | STATE | ICSE Boards</div>
-              <ul class="blist">
-                <li><i class="fas fa-check-circle"></i><strong>8th, 9th, 10th &amp; 12th (Com.)</strong></li>
-                <li><i class="fas fa-book-open"></i>English | Maths | Science | SST</li>
-                <li><i class="fas fa-check-circle"></i><strong>For 2nd to 7th</strong></li>
-                <li><i class="fas fa-book-open"></i>All Subjects + Vedic Maths</li>
-              </ul>
-            </div>
-            <div class="float-chip fc1" style="padding: 0; box-shadow: none; background: transparent;">
-              <a routerLink="/admission" class="btn-pink shadow"><i class="fas fa-user-plus"></i> Enroll Now</a>
-            </div>
-            <div class="float-chip fc2" style="padding: 0; box-shadow: none; background: transparent;">
-              <a routerLink="/contact" class="btn-ghost shadow" style="color:var(--navy);border-color:var(--navy);background:#fff;"><i class="fas fa-phone-alt"></i> Contact Us</a>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
   <div class="hero-cut"></div>
 </section>
-
-<!-- BENEFITS STRIP -->
-<div class="benefits-strip">
-  <div class="container">
-    <div class="row g-3 align-items-center">
-      <div class="col-6 col-md-3">
-        <div class="d-flex align-items-center gap-3">
-          <div class="bc-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-          <div><span class="bc-strong">Expert Faculty</span><span class="bc-small">10+ Years experience</span></div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="d-flex align-items-center gap-3">
-          <div class="bc-icon"><i class="fas fa-users"></i></div>
-          <div><span class="bc-strong">Small Batches</span><span class="bc-small">Max 20 students</span></div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="d-flex align-items-center gap-3">
-          <div class="bc-icon"><i class="fas fa-file-alt"></i></div>
-          <div><span class="bc-strong">Regular Tests</span><span class="bc-small">Weekly assessments</span></div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="d-flex align-items-center gap-3">
-          <div class="bc-icon"><i class="fab fa-whatsapp"></i></div>
-          <div><span class="bc-strong">Parent Updates</span><span class="bc-small">WhatsApp reports</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- WHY CHOOSE US -->
 <section class="vtc-sec alt">
@@ -177,7 +149,7 @@
       <div class="col-6 col-md-3 reveal d1"><span class="cb-num" data-target="95" data-suffix="%">0</span>
         <div class="cb-lbl">Pass Rate</div>
       </div>
-      <div class="col-6 col-md-3 reveal d2"><span class="cb-num" data-target="26" data-suffix="+">0</span>
+      <div class="col-6 col-md-3 reveal d2"><span class="cb-num" data-target="25" data-suffix="+">0</span>
         <div class="cb-lbl">Years Excellence</div>
       </div>
       <div class="col-6 col-md-3 reveal d3"><span class="cb-num" data-target="50" data-suffix="+">0</span>
@@ -195,8 +167,8 @@
         <div class="eyebrow">Courses & Programmes</div>
         <h2 class="sec-h">What We <span>Teach</span></h2>
         <div class="pink-rule cx"></div>
-        <p class="sec-desc mx-auto">Comprehensive programmes for every stream and class — designed for board success
-          and beyond.</p>
+        <p class="sec-desc mx-auto">Comprehensive programmes for every stream and class — designed for board success and
+          beyond.</p>
       </div>
     </div>
     <div class="row g-4">
@@ -213,7 +185,7 @@
               <div>
                 <div class="cp-fee-lbl">Enroll Now</div>
                 <div class="cp-fee">Admission Open</div>
-              </div><a routerLink="/admission" class="btn-pink" style="padding:.45rem 1rem;font-size:.78rem">Enquire</a>
+              </div><a routerLink="/contact" fragment="enquire-form" class="btn-pink" style="padding:.45rem 1rem;font-size:.78rem">Enquire</a>
             </div>
           </div>
         </div>
@@ -231,7 +203,7 @@
               <div>
                 <div class="cp-fee-lbl">Enroll Now</div>
                 <div class="cp-fee">Admission Open</div>
-              </div><a routerLink="/admission" class="btn-pink" style="padding:.45rem 1rem;font-size:.78rem">Enquire</a>
+              </div><a routerLink="/contact" fragment="enquire-form" class="btn-pink" style="padding:.45rem 1rem;font-size:.78rem">Enquire</a>
             </div>
           </div>
         </div>
@@ -249,19 +221,19 @@
               <div>
                 <div class="cp-fee-lbl">Enroll Now</div>
                 <div class="cp-fee">Admission Open</div>
-              </div><a routerLink="/admission" class="btn-pink" style="padding:.45rem 1rem;font-size:.78rem">Enquire</a>
+              </div><a routerLink="/contact" fragment="enquire-form" class="btn-pink" style="padding:.45rem 1rem;font-size:.78rem">Enquire</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="text-center mt-4 reveal"><a routerLink="/courses" class="btn-pink"><i
-          class="fas fa-th-large me-2"></i>View All 9 Courses</a></div>
+    <div class="text-center mt-4 reveal"><a routerLink="/courses" fragment="all-courses" class="btn-pink"><i
+          class="fas fa-th-large me-2"></i>View All 8 Courses</a></div>
   </div>
 </section>
 
 <!-- TESTIMONIALS PREVIEW -->
-<section class="vtc-sec">
+<!-- <section class="vtc-sec">
   <div class="container">
     <div class="row justify-content-center text-center mb-5">
       <div class="col-lg-6 reveal">
@@ -321,19 +293,117 @@
         style="color:var(--navy);border-color:var(--navy)"><i class="fas fa-comments me-2"></i>Read All Reviews</a>
     </div>
   </div>
+</section> -->
+
+<!-- ADMISSION FORM SECTION -->
+<section class="vtc-sec alt" id="admission-form-section">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-2">
+      <div class="col-lg-7 reveal">
+        <div class="eyebrow">Enroll Now</div>
+        <h2 class="sec-h">New <span>Admission</span></h2>
+        <div class="pink-rule cx"></div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10 reveal">
+        <div class="admission-form-wrapper"
+          style="background: #fff; border-radius: 12px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+          <form>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <label class="form-label" style="font-weight: 600; color: var(--navy);">Student Name</label>
+                <input #stuName type="text" class="form-control" placeholder="Enter student name"
+                  style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" style="font-weight: 600; color: var(--navy);">Gender</label>
+                <select #gender class="form-select" style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                  <option selected disabled>Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" style="font-weight: 600; color: var(--navy);">Date of Birth</label>
+                <input #dob type="date" class="form-control"
+                  style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;" placeholder="dd-mm-yyyy">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" style="font-weight: 600; color: var(--navy);">School Name</label>
+                <input #school type="text" class="form-control" placeholder="Enter school name"
+                  style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" style="font-weight: 600; color: var(--navy);">School Location</label>
+                <input #schoolLoc type="text" class="form-control" placeholder="Enter school location"
+                  style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" style="font-weight: 600; color: var(--navy);">Mother's Name</label>
+                <input #mothName type="text" class="form-control" placeholder="Mother's name"
+                  style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" style="font-weight: 600; color: var(--navy);">Father / Guardian Name</label>
+                <input #fathName type="text" class="form-control" placeholder="Father or Guardian name"
+                  style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" style="font-weight: 600; color: var(--navy);">Contact Number</label>
+                <input #contact type="text" class="form-control" placeholder="Enter contact number"
+                  style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+              </div>
+              <div class="col-12">
+                <label class="form-label" style="font-weight: 600; color: var(--navy);">Address</label>
+                <textarea #addr class="form-control" rows="3" placeholder="Enter full address"
+                  style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" style="font-weight: 600; color: var(--navy);">City</label>
+                <input #city type="text" class="form-control" placeholder="City"
+                  style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" style="font-weight: 600; color: var(--navy);">Pincode</label>
+                <input #pin type="text" class="form-control" placeholder="Pincode"
+                  style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" style="font-weight: 600; color: var(--navy);">Parents Qualification</label>
+                <input #parQual type="text" class="form-control" placeholder="Parents qualification"
+                  style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" style="font-weight: 600; color: var(--navy);">Parents Occupation</label>
+                <input #parOcc type="text" class="form-control" placeholder="Parents occupation"
+                  style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+              </div>
+              <div class="col-12 text-center mt-4">
+                <button type="button" class="btn-pink w-50 justify-content-center"
+                  (click)="submitAdmissionForm(stuName.value, gender.value, dob.value, school.value, schoolLoc.value, mothName.value, fathName.value, contact.value, addr.value, city.value, pin.value, parQual.value, parOcc.value)">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- CTA BAND -->
 <div class="cta-band">
   <div class="container text-center" style="position:relative;z-index:1">
     <div class="reveal">
-      <div class="eyebrow" style="color:var(--pink-h);justify-content:center">Admission Open 2025–26</div>
+      <div class="eyebrow" style="color:var(--pink-h);justify-content:center">Admission Open 2026–27</div>
       <h2 class="mb-3">Ready to Start Your <span>Success Journey?</span></h2>
-      <p style="color:rgba(255,255,255,.6);max-width:500px;margin:0 auto 2rem;font-size:.95rem">Join 1200+ students
-        who have transformed their academic results at Vijay Tuition Classes. Limited seats — enrol today.</p>
-      <div class="d-flex flex-wrap justify-content-center gap-3"><a routerLink="/admission" class="btn-pink"><i
-            class="fas fa-graduation-cap me-2"></i>Apply for Admission</a><a routerLink="/contact" class="btn-ghost"><i
-            class="fas fa-phone-alt me-2"></i>Call / WhatsApp</a></div>
+      <p style="color:rgba(255,255,255,.6);max-width:500px;margin:0 auto 2rem;font-size:.95rem">Join 500+ students who
+        have transformed their academic results at Vijay Tuition Classes. Limited seats — enrol today.</p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a routerLink="/" fragment="admission-form-section" class="btn-pink"><i class="fas fa-graduation-cap me-2"></i>Apply for Admission</a>
+        <a routerLink="/contact" class="btn-ghost"><i class="fas fa-phone-alt me-2"></i>Call / WhatsApp</a>
+      </div>
     </div>
   </div>
 </div>

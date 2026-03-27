@@ -4,10 +4,24 @@
   padding: 4rem 0 0
 }
 
+.brand-hex {
+  width: 74px;
+  height: 74px;
+  /* background: var(--pink); */
+  /* clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); */
+  display: grid;
+  place-items: center;
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #fff;
+  flex-shrink: 0
+}
+
 .foot-logo strong {
   display: block;
   font-family: 'Fraunces', serif;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   color: #fff
 }
 

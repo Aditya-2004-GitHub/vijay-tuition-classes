@@ -1,8 +1,9 @@
 import { Component, AfterViewInit, Renderer2, ElementRef } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })
@@ -34,5 +35,11 @@ export class Contact implements AfterViewInit {
     revealElements.forEach((el: Element) => {
       this.revealObserver.observe(el);
     });
+  }
+
+  submitContact(name: string, mobile: string, email: string, subject: string, studentClass: string, prefTime: string, message: string) {
+    const msg = `*New Contact Enquiry*\n\n*Name:* ${name}\n*Mobile:* ${mobile}\n*Email:* ${email}\n*Subject:* ${subject}\n*Class:* ${studentClass}\n*Preferred Time:* ${prefTime}\n*Message:* ${message}`;
+    const url = `https://wa.me/919371013687?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
   }
 }

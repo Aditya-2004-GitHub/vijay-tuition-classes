@@ -27,4 +27,10 @@ export class Navbar implements OnInit {
     });
   }
 
+  closeNavbar() {
+    const navbarCollapse = document.getElementById('navMenu');
+    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+      navbarCollapse.classList.remove('show');
+    }
+  }
 }

@@ -68,6 +68,62 @@ a {
   align-items: center
 }
 
+/* IDEA 1: Pure CSS Background Carousel (Active) */
+.hero-bg-carousel {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hero-bg-carousel .bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: bgCrossfade 17s infinite;
+}
+.hero-bg-carousel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 30, 56, 0.715); /* Navy overlay */
+}
+
+@keyframes bgCrossfade {
+  0% { opacity: 0; transform: scale(1); }
+  10% { opacity: 1; }
+  25% { opacity: 1; }
+  35% { opacity: 0; transform: scale(1.05); }
+  100% { opacity: 0; }
+}
+
+/* IDEA 2: TypeScript Driven Background Carousel (Commented Out) */
+/*
+.hero-bg-carousel-ts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hero-bg-carousel-ts .bg-slide-ts {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out, transform 4s ease-in-out;
+  transform: scale(1);
+}
+.hero-bg-carousel-ts .bg-slide-ts.active {
+  opacity: 1;
+  transform: scale(1.05);
+}
+.hero-bg-carousel-ts .bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 30, 56, 0.85);
+}
+*/
+
 .hero-grid {
   position: absolute;
   inset: 0;

@@ -1,318 +1,325 @@
-  <section class="pg-hero">
-    <div class="container pg-hero-content">
-      <div class="row">
-        <div class="col-lg-7">
-          <div class="pg-tag reveal"><i class="fas fa-th-large me-1"></i>Courses & Programmes</div>
-          <h1 class="reveal">What We <span>Teach</span></h1>
-          <p class="reveal d1">9 comprehensive programmes for Class 2–12. Each course includes batch timings, syllabus overview, duration, and fees — designed for board success and beyond.</p>
+<section class="pg-hero">
+  <div class="container pg-hero-content">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="pg-tag reveal"><i class="fas fa-th-large me-1"></i>Courses & Programmes</div>
+        <h1 class="reveal">What We <span>Teach</span></h1>
+        <p class="reveal d1">9 comprehensive programmes for Class 2–12. Each course includes batch timings, syllabus
+          overview, duration, and fees — designed for board success and beyond.</p>
+      </div>
+    </div>
+  </div>
+  <div class="hero-diag"></div>
+</section>
+
+<!-- FILTER + COURSES GRID -->
+<section class="vtc-sec alt" id="all-courses">
+  <div class="container">
+    <div class="filter-bar reveal">
+      <button class="fb-btn active" [class.active]="activeFilter === 'all'" (click)="setFilter('all')">All
+        Courses</button>
+      <button class="fb-btn" [class.active]="activeFilter === 'primary'" (click)="setFilter('primary')">Primary</button>
+      <button class="fb-btn" [class.active]="activeFilter === 'secondary'"
+        (click)="setFilter('secondary')">Secondary</button>
+      <button class="fb-btn" [class.active]="activeFilter === 'commerce'"
+        (click)="setFilter('commerce')">Commerce</button>
+      <button class="fb-btn" [class.active]="activeFilter === 'special'" (click)="setFilter('special')">Special
+        Programs</button>
+    </div>
+    <div class="row g-4" id="courses-grid">
+      <!-- Course 1 -->
+      <div class="col-md-6 col-lg-4 course-col reveal d1" [hidden]="!isVisible('primary')">
+        <div class="cc2">
+          <div class="cc2-head">
+            <div class="cc2-ico"><i class="fas fa-child"></i></div>
+            <h4>Vijay Kids Corner</h4><span class="cc2-badge">Class 2–7</span>
+          </div>
+          <div class="cc2-body">
+            <div class="cc2-meta">
+              <div>
+                <div class="cc2-ml">Duration</div>
+                <div class="cc2-mv">Full Academic Year</div>
+              </div>
+              <div>
+                <div class="cc2-ml">Batch Timing</div>
+                <div class="cc2-mv">4:00 PM - 6:00 PM</div>
+              </div>
+              <div>
+                <div class="cc2-ml">Board</div>
+                <div class="cc2-mv">CBSE / ICSE / State</div>
+              </div>
+              <div>
+                <div class="cc2-ml">Batch Size</div>
+                <div class="cc2-mv">Max 20 Students</div>
+              </div>
+            </div>
+            <div class="cc2-syl-title">Syllabus Overview</div>
+            <div class="cc2-tags"><span class="cc2-tag">All Subjects</span><span class="cc2-tag">Vedic Maths</span>
+            </div>
+            <div class="cc2-fee">
+              <div>
+                <div class="cc2-fl">Enroll Now</div>
+                <div class="cc2-fa">Admission Open</div>
+              </div><a routerLink="/contact" fragment="enquire-form" class="enq-sm">Enquire Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Course 2 -->
+      <div class="col-md-6 col-lg-4 course-col reveal d2" [hidden]="!isVisible('secondary')">
+        <div class="cc2">
+          <div class="cc2-head">
+            <div class="cc2-ico"><i class="fas fa-book-reader"></i></div>
+            <h4>Secondary Section</h4><span class="cc2-badge">Class 8–10</span>
+          </div>
+          <div class="cc2-body">
+            <div class="cc2-meta">
+              <div>
+                <div class="cc2-ml">Duration</div>
+                <div class="cc2-mv">Full Year</div>
+              </div>
+              <div>
+                <div class="cc2-ml">Batch Timing</div>
+                <div class="cc2-mv">Morning / Evening</div>
+              </div>
+              <div>
+                <div class="cc2-ml">Board</div>
+                <div class="cc2-mv">CBSE / STATE / ICSE</div>
+              </div>
+              <div>
+                <div class="cc2-ml">Batch Size</div>
+                <div class="cc2-mv">Max 20 Students</div>
+              </div>
+            </div>
+            <div class="cc2-syl-title">Subjects Covered</div>
+            <div class="cc2-tags"><span class="cc2-tag">English</span><span class="cc2-tag">Maths</span><span
+                class="cc2-tag">Science</span><span class="cc2-tag">SST</span></div>
+            <div class="cc2-fee">
+              <div>
+                <div class="cc2-fl">Enroll Now</div>
+                <div class="cc2-fa">Admission Open</div>
+              </div><a routerLink="/contact" fragment="enquire-form" class="enq-sm">Enquire Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Course 3 -->
+      <div class="col-md-6 col-lg-4 course-col reveal d3" [hidden]="!isVisible('commerce')">
+        <div class="cc2">
+          <div class="cc2-head">
+            <div class="cc2-ico"><i class="fas fa-chart-line"></i></div>
+            <h4>Commerce Stream</h4><span class="cc2-badge">Class 11–12</span>
+          </div>
+          <div class="cc2-body">
+            <div class="cc2-meta">
+              <div>
+                <div class="cc2-ml">Medium</div>
+                <div class="cc2-mv">Eng / Hindi / Marathi</div>
+              </div>
+              <div>
+                <div class="cc2-ml">Batch Timing</div>
+                <div class="cc2-mv">Morning / Evening</div>
+              </div>
+              <div>
+                <div class="cc2-ml">Board</div>
+                <div class="cc2-mv">CBSE / SSC</div>
+              </div>
+              <div>
+                <div class="cc2-ml">Batch Size</div>
+                <div class="cc2-mv">Max 20 Students</div>
+              </div>
+            </div>
+            <div class="cc2-syl-title">Subjects Covered</div>
+            <div class="cc2-tags"><span class="cc2-tag">Commerce Subjects</span></div>
+            <div class="cc2-fee">
+              <div>
+                <div class="cc2-fl">Enroll Now</div>
+                <div class="cc2-fa">Admission Open</div>
+              </div><a routerLink="/contact" fragment="enquire-form" class="enq-sm">Enquire Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Course 4 -->
+      <div class="col-md-6 col-lg-4 course-col reveal d1" [hidden]="!isVisible('special')">
+        <div class="cc2">
+          <div class="cc2-head">
+            <div class="cc2-ico"><i class="fas fa-language"></i></div>
+            <h4>English Speaking & Grammar</h4><span class="cc2-badge">Class 5+</span>
+          </div>
+          <div class="cc2-body">
+            <div class="cc2-meta">
+              <div>
+                <div class="cc2-ml">Duration</div>
+                <div class="cc2-mv">April to June</div>
+              </div>
+              <div>
+                <div class="cc2-ml">Batches</div>
+                <div class="cc2-mv">Junior / Senior</div>
+              </div>
+              <div>
+                <div class="cc2-ml">Level</div>
+                <div class="cc2-mv">Basic to Adv</div>
+              </div>
+              <div>
+                <div class="cc2-ml">Batch Size</div>
+                <div class="cc2-mv">Max 20 Students</div>
+              </div>
+            </div>
+            <div class="cc2-syl-title">Syllabus Overview</div>
+            <div class="cc2-tags"><span class="cc2-tag">Speech & Debate</span><span class="cc2-tag">Group
+                Discussion</span><span class="cc2-tag">Interview Skills</span><span class="cc2-tag">Fluency</span></div>
+            <div class="cc2-fee">
+              <div>
+                <div class="cc2-fl">Summer Special</div>
+                <div class="cc2-fa">From 1st April</div>
+              </div><a routerLink="/contact" fragment="enquire-form" class="enq-sm">Enquire Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Course 5 -->
+      <div class="col-md-6 col-lg-4 course-col reveal d2" [hidden]="!isVisible('special')">
+        <div class="cc2">
+          <div class="cc2-head">
+            <div class="cc2-ico"><i class="fas fa-calculator"></i></div>
+            <h4>Basic to Advanced Maths</h4><span class="cc2-badge">Class 5–9</span>
+          </div>
+          <div class="cc2-body">
+            <div class="cc2-meta">
+              <div>
+                <div class="cc2-ml">Duration</div>
+                <div class="cc2-mv">Summer Batch</div>
+              </div>
+              <div>
+                <div class="cc2-ml">Batch Starts</div>
+                <div class="cc2-mv">1st May</div>
+              </div>
+              <div>
+                <div class="cc2-ml">Focus</div>
+                <div class="cc2-mv">Problem Solving</div>
+              </div>
+              <div>
+                <div class="cc2-ml">Batch Size</div>
+                <div class="cc2-mv">Max 20 Students</div>
+              </div>
+            </div>
+            <div class="cc2-syl-title">Key Benefits</div>
+            <div class="cc2-tags"><span class="cc2-tag">Brain Development</span><span class="cc2-tag">Life
+                Skills</span><span class="cc2-tag">Better Decision Making</span></div>
+            <div class="cc2-fee">
+              <div>
+                <div class="cc2-fl">Summer Special</div>
+                <div class="cc2-fa">From 1st May</div>
+              </div><a routerLink="/contact" fragment="enquire-form" class="enq-sm">Enquire Now</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="hero-diag"></div>
-  </section>
+  </div>
+</section>
 
-  <!-- FILTER + COURSES GRID -->
-  <section class="vtc-sec alt">
-    <div class="container">
-      <div class="filter-bar reveal">
-        <button class="fb-btn active" [class.active]="activeFilter === 'all'" (click)="setFilter('all')">All Courses</button>
-        <button class="fb-btn" [class.active]="activeFilter === 'primary'" (click)="setFilter('primary')">Primary</button>
-        <button class="fb-btn" [class.active]="activeFilter === 'secondary'" (click)="setFilter('secondary')">Secondary</button>
-        <button class="fb-btn" [class.active]="activeFilter === 'commerce'" (click)="setFilter('commerce')">Commerce</button>
-        <button class="fb-btn" [class.active]="activeFilter === 'special'" (click)="setFilter('special')">Special Programs</button>
-      </div>
-      <div class="row g-4" id="courses-grid">
-        <!-- Course 1 -->
-        <div class="col-md-6 col-lg-4 course-col reveal d1" [hidden]="!isVisible('primary')">
-          <div class="cc2">
-            <div class="cc2-head">
-              <div class="cc2-ico"><i class="fas fa-child"></i></div>
-              <h4>Vijay Kids Corner</h4><span class="cc2-badge">Class 2–7</span>
-            </div>
-            <div class="cc2-body">
-              <div class="cc2-meta">
-                <div>
-                  <div class="cc2-ml">Duration</div>
-                  <div class="cc2-mv">Full Academic Year</div>
-                </div>
-                <div>
-                  <div class="cc2-ml">Batch Timing</div>
-                  <div class="cc2-mv">4:00 PM - 6:00 PM</div>
-                </div>
-                <div>
-                  <div class="cc2-ml">Board</div>
-                  <div class="cc2-mv">CBSE / ICSE / State</div>
-                </div>
-                <div>
-                  <div class="cc2-ml">Batch Size</div>
-                  <div class="cc2-mv">Max 20 Students</div>
-                </div>
-              </div>
-              <div class="cc2-syl-title">Syllabus Overview</div>
-              <div class="cc2-tags"><span class="cc2-tag">All Subjects</span><span class="cc2-tag">Vedic Maths</span></div>
-              <div class="cc2-fee">
-                <div>
-                  <div class="cc2-fl">Enroll Now</div>
-                  <div class="cc2-fa">Admission Open</div>
-                </div><a href="admission.html" class="enq-sm">Enquire Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Course 2 -->
-        <div class="col-md-6 col-lg-4 course-col reveal d2" [hidden]="!isVisible('secondary')">
-          <div class="cc2">
-            <div class="cc2-head">
-              <div class="cc2-ico"><i class="fas fa-book-reader"></i></div>
-              <h4>Secondary Section</h4><span class="cc2-badge">Class 8–10</span>
-            </div>
-            <div class="cc2-body">
-              <div class="cc2-meta">
-                <div>
-                  <div class="cc2-ml">Duration</div>
-                  <div class="cc2-mv">Full Year</div>
-                </div>
-                <div>
-                  <div class="cc2-ml">Batch Timing</div>
-                  <div class="cc2-mv">Morning / Evening</div>
-                </div>
-                <div>
-                  <div class="cc2-ml">Board</div>
-                  <div class="cc2-mv">CBSE / STATE / ICSE</div>
-                </div>
-                <div>
-                  <div class="cc2-ml">Batch Size</div>
-                  <div class="cc2-mv">Max 20 Students</div>
-                </div>
-              </div>
-              <div class="cc2-syl-title">Subjects Covered</div>
-              <div class="cc2-tags"><span class="cc2-tag">English</span><span class="cc2-tag">Maths</span><span
-                  class="cc2-tag">Science</span><span class="cc2-tag">SST</span></div>
-              <div class="cc2-fee">
-                <div>
-                  <div class="cc2-fl">Enroll Now</div>
-                  <div class="cc2-fa">Admission Open</div>
-                </div><a href="admission.html" class="enq-sm">Enquire Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Course 3 -->
-        <div class="col-md-6 col-lg-4 course-col reveal d3" [hidden]="!isVisible('commerce')">
-          <div class="cc2">
-            <div class="cc2-head">
-              <div class="cc2-ico"><i class="fas fa-chart-line"></i></div>
-              <h4>Commerce Stream</h4><span class="cc2-badge">Class 11–12</span>
-            </div>
-            <div class="cc2-body">
-              <div class="cc2-meta">
-                <div>
-                  <div class="cc2-ml">Medium</div>
-                  <div class="cc2-mv">Eng / Hindi / Marathi</div>
-                </div>
-                <div>
-                  <div class="cc2-ml">Batch Timing</div>
-                  <div class="cc2-mv">Morning / Evening</div>
-                </div>
-                <div>
-                  <div class="cc2-ml">Board</div>
-                  <div class="cc2-mv">CBSE / SSC</div>
-                </div>
-                <div>
-                  <div class="cc2-ml">Batch Size</div>
-                  <div class="cc2-mv">Max 20 Students</div>
-                </div>
-              </div>
-              <div class="cc2-syl-title">Subjects Covered</div>
-              <div class="cc2-tags"><span class="cc2-tag">Commerce Subjects</span></div>
-              <div class="cc2-fee">
-                <div>
-                  <div class="cc2-fl">Enroll Now</div>
-                  <div class="cc2-fa">Admission Open</div>
-                </div><a href="admission.html" class="enq-sm">Enquire Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Course 4 -->
-        <div class="col-md-6 col-lg-4 course-col reveal d1" [hidden]="!isVisible('special')">
-          <div class="cc2">
-            <div class="cc2-head">
-              <div class="cc2-ico"><i class="fas fa-language"></i></div>
-              <h4>English Speaking & Grammar</h4><span class="cc2-badge">Class 5+</span>
-            </div>
-            <div class="cc2-body">
-              <div class="cc2-meta">
-                <div>
-                  <div class="cc2-ml">Duration</div>
-                  <div class="cc2-mv">April to June</div>
-                </div>
-                <div>
-                  <div class="cc2-ml">Batches</div>
-                  <div class="cc2-mv">Junior / Senior</div>
-                </div>
-                <div>
-                  <div class="cc2-ml">Level</div>
-                  <div class="cc2-mv">Basic to Adv</div>
-                </div>
-                <div>
-                  <div class="cc2-ml">Batch Size</div>
-                  <div class="cc2-mv">Max 20 Students</div>
-                </div>
-              </div>
-              <div class="cc2-syl-title">Syllabus Overview</div>
-              <div class="cc2-tags"><span class="cc2-tag">Speech & Debate</span><span class="cc2-tag">Group Discussion</span><span
-                  class="cc2-tag">Interview Skills</span><span class="cc2-tag">Fluency</span></div>
-              <div class="cc2-fee">
-                <div>
-                  <div class="cc2-fl">Summer Special</div>
-                  <div class="cc2-fa">From 1st April</div>
-                </div><a href="admission.html" class="enq-sm">Enquire Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Course 5 -->
-        <div class="col-md-6 col-lg-4 course-col reveal d2" [hidden]="!isVisible('special')">
-          <div class="cc2">
-            <div class="cc2-head">
-              <div class="cc2-ico"><i class="fas fa-calculator"></i></div>
-              <h4>Basic to Advanced Maths</h4><span class="cc2-badge">Class 5–9</span>
-            </div>
-            <div class="cc2-body">
-              <div class="cc2-meta">
-                <div>
-                  <div class="cc2-ml">Duration</div>
-                  <div class="cc2-mv">Summer Batch</div>
-                </div>
-                <div>
-                  <div class="cc2-ml">Batch Starts</div>
-                  <div class="cc2-mv">1st May</div>
-                </div>
-                <div>
-                  <div class="cc2-ml">Focus</div>
-                  <div class="cc2-mv">Problem Solving</div>
-                </div>
-                <div>
-                  <div class="cc2-ml">Batch Size</div>
-                  <div class="cc2-mv">Max 20 Students</div>
-                </div>
-              </div>
-              <div class="cc2-syl-title">Key Benefits</div>
-              <div class="cc2-tags"><span class="cc2-tag">Brain Development</span><span class="cc2-tag">Life Skills</span><span class="cc2-tag">Better Decision Making</span></div>
-              <div class="cc2-fee">
-                <div>
-                  <div class="cc2-fl">Summer Special</div>
-                  <div class="cc2-fa">From 1st May</div>
-                </div><a href="admission.html" class="enq-sm">Enquire Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
+<!-- BATCH SCHEDULE TABLE -->
+<section class="vtc-sec">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-6 reveal">
+        <div class="eyebrow">Batch Timings</div>
+        <h2 class="sec-h">Complete <span>Schedule</span></h2>
+        <div class="pink-rule cx"></div>
+        <p class="sec-desc mx-auto">All batch timings for 2025–26. Morning and evening options available for every
+          programme.</p>
       </div>
     </div>
-  </section>
-
-  <!-- BATCH SCHEDULE TABLE -->
-  <section class="vtc-sec">
-    <div class="container">
-      <div class="row justify-content-center text-center mb-5">
-        <div class="col-lg-6 reveal">
-          <div class="eyebrow">Batch Timings</div>
-          <h2 class="sec-h">Complete <span>Schedule</span></h2>
-          <div class="pink-rule cx"></div>
-          <p class="sec-desc mx-auto">All batch timings for 2025–26. Morning and evening options available for every
-            programme.</p>
-        </div>
-      </div>
-      <div class="reveal" style="overflow-x:auto">
-        <table class="sch-table"
-          style="border-radius:16px;overflow:hidden;box-shadow:var(--sh-sm);width:100%;min-width:600px">
-          <thead>
-            <tr>
-              <th>Programme</th>
-              <th>Class</th>
-              <th>Subjects</th>
-              <th>Morning Batch</th>
-              <th>Evening Batch</th>
-              <th>Board</th>
-              <th>Fee/Month</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Vijay Kids Corner</td>
-              <td><span class="sch-badge">2–7</span></td>
-              <td>All Subjects</td>
-              <td>—</td>
-              <td>4:00 – 6:00 PM</td>
-              <td>CBSE, ICSE, State</td>
-              <td>₹1,200</td>
-            </tr>
-            <tr>
-              <td>8th, 9th Coaching</td>
-              <td><span class="sch-badge">8-9</span></td>
-              <td>Eng, Maths, Science, SST</td>
-              <td>6:30 – 8:30 AM</td>
-              <td>5:00 – 7:00 PM</td>
-              <td>CBSE / STATE</td>
-              <td>₹1,800</td>
-            </tr>
-            <tr>
-              <td>10th Board Coaching</td>
-              <td><span class="sch-badge">10</span></td>
-              <td>Eng, Maths, Science, SST</td>
-              <td>7:00 – 9:00 AM</td>
-              <td>6:00 – 8:00 PM</td>
-              <td>CBSE / STATE / ICSE</td>
-              <td>₹2,500</td>
-            </tr>
-            <tr>
-              <td>11th–12th Commerce</td>
-              <td><span class="sch-badge">11–12</span></td>
-              <td>All Commerce Subjects</td>
-              <td>8:00 – 10:00 AM</td>
-              <td>5:30 – 7:30 PM</td>
-              <td>CBSE / STATE</td>
-              <td>₹2,500</td>
-            </tr>
-            <tr>
-              <td>English Speaking Class</td>
-              <td><span class="sch-badge">5th-10th+</span></td>
-              <td>Speech, Grammar, Communication</td>
-              <td>7:30 – 9:30 AM</td>
-              <td>5:00 – 7:00 PM</td>
-              <td>All Boards</td>
-              <td>₹2,200</td>
-            </tr>
-            <tr>
-              <td>Basic to Advanced Maths</td>
-              <td><span class="sch-badge">5th-9th</span></td>
-              <td>Maths</td>
-              <td>6:30 – 8:30 AM</td>
-              <td>4:30 – 6:30 PM</td>
-              <td>All Boards</td>
-              <td>₹3,000</td>
-            </tr>
-            <tr>
-              <td>Marathi & Hindi Grammar</td>
-              <td><span class="sch-badge">Any</span></td>
-              <td>Language</td>
-              <td>8:00 – 10:00 AM</td>
-              <td>7:00 – 9:00 PM</td>
-              <td>STATE</td>
-              <td>₹2,800</td>
-            </tr>
-            <tr>
-              <td>Vedic Maths</td>
-              <td><span class="sch-badge">2nd-7th</span></td>
-              <td>Maths</td>
-              <td>7:00 – 8:30 AM</td>
-              <td>5:00 – 6:30 PM</td>
-              <td>All Boards</td>
-              <td>₹1,500</td>
-            </tr>
-            <!-- <tr>
+    <div class="reveal" style="overflow-x:auto">
+      <table class="sch-table"
+        style="border-radius:16px;overflow:hidden;box-shadow:var(--sh-sm);width:100%;min-width:600px">
+        <thead>
+          <tr>
+            <th>Programme</th>
+            <th>Class</th>
+            <th>Subjects</th>
+            <th>Morning Batch</th>
+            <th>Evening Batch</th>
+            <th>Board</th>
+            <th>Fee/Month</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Vijay Kids Corner</td>
+            <td><span class="sch-badge">2–7</span></td>
+            <td>All Subjects</td>
+            <td>—</td>
+            <td>4:00 – 6:00 PM</td>
+            <td>CBSE, ICSE, State</td>
+            <td>₹1,200</td>
+          </tr>
+          <tr>
+            <td>8th, 9th Coaching</td>
+            <td><span class="sch-badge">8-9</span></td>
+            <td>Eng, Maths, Science, SST</td>
+            <td>6:30 – 8:30 AM</td>
+            <td>5:00 – 7:00 PM</td>
+            <td>CBSE / STATE</td>
+            <td>₹1,800</td>
+          </tr>
+          <tr>
+            <td>10th Board Coaching</td>
+            <td><span class="sch-badge">10</span></td>
+            <td>Eng, Maths, Science, SST</td>
+            <td>7:00 – 9:00 AM</td>
+            <td>6:00 – 8:00 PM</td>
+            <td>CBSE / STATE / ICSE</td>
+            <td>₹2,500</td>
+          </tr>
+          <tr>
+            <td>11th–12th Commerce</td>
+            <td><span class="sch-badge">11–12</span></td>
+            <td>All Commerce Subjects</td>
+            <td>8:00 – 10:00 AM</td>
+            <td>5:30 – 7:30 PM</td>
+            <td>CBSE / STATE</td>
+            <td>₹2,500</td>
+          </tr>
+          <tr>
+            <td>English Speaking Class</td>
+            <td><span class="sch-badge">5th-10th+</span></td>
+            <td>Speech, Grammar, Communication</td>
+            <td>7:30 – 9:30 AM</td>
+            <td>5:00 – 7:00 PM</td>
+            <td>All Boards</td>
+            <td>₹2,200</td>
+          </tr>
+          <tr>
+            <td>Basic to Advanced Maths</td>
+            <td><span class="sch-badge">5th-9th</span></td>
+            <td>Maths</td>
+            <td>6:30 – 8:30 AM</td>
+            <td>4:30 – 6:30 PM</td>
+            <td>All Boards</td>
+            <td>₹3,000</td>
+          </tr>
+          <tr>
+            <td>Marathi & Hindi Grammar</td>
+            <td><span class="sch-badge">Any</span></td>
+            <td>Language</td>
+            <td>8:00 – 10:00 AM</td>
+            <td>7:00 – 9:00 PM</td>
+            <td>STATE</td>
+            <td>₹2,800</td>
+          </tr>
+          <tr>
+            <td>Vedic Maths</td>
+            <td><span class="sch-badge">2nd-7th</span></td>
+            <td>Maths</td>
+            <td>7:00 – 8:30 AM</td>
+            <td>5:00 – 6:30 PM</td>
+            <td>All Boards</td>
+            <td>₹1,500</td>
+          </tr>
+          <!-- <tr>
               <td>Board Crash Course</td>
               <td><span class="sch-badge">10 & 12</span></td>
               <td></td>
@@ -320,99 +327,99 @@
               <td>All Boards</td>
               <td>₹3,500</td>
             </tr> -->
-          </tbody>
-        </table>
-      </div>
+        </tbody>
+      </table>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- WHAT'S INCLUDED DARK SECTION -->
-  <section class="vtc-sec dark">
-    <div class="container">
-      <div class="row justify-content-center text-center mb-5">
-        <div class="col-lg-6 reveal">
-          <div class="eyebrow" style="color:var(--pink-h)">What's Included</div>
-          <h2 class="sec-h lgt">Every Course <span>Includes</span></h2>
-          <div class="pink-rule cx"></div>
+<!-- WHAT'S INCLUDED DARK SECTION -->
+<section class="vtc-sec dark">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-6 reveal">
+        <div class="eyebrow" style="color:var(--pink-h)">What's Included</div>
+        <h2 class="sec-h lgt">Every Course <span>Includes</span></h2>
+        <div class="pink-rule cx"></div>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3 reveal d1">
+        <div class="dk-card">
+          <div class="dk-ico"><i class="fas fa-book"></i></div>
+          <h5>Free Study Material</h5>
+          <p>Chapter-wise notes, solved examples, and important questions — all provided free to every enrolled
+            student.</p>
         </div>
       </div>
-      <div class="row g-4">
-        <div class="col-sm-6 col-lg-3 reveal d1">
-          <div class="dk-card">
-            <div class="dk-ico"><i class="fas fa-book"></i></div>
-            <h5>Free Study Material</h5>
-            <p>Chapter-wise notes, solved examples, and important questions — all provided free to every enrolled
-              student.</p>
-          </div>
+      <div class="col-sm-6 col-lg-3 reveal d2">
+        <div class="dk-card">
+          <div class="dk-ico"><i class="fas fa-clipboard-check"></i></div>
+          <h5>Weekly Tests</h5>
+          <p>Regular chapter tests every week and monthly full-syllabus assessments to track progress.</p>
         </div>
-        <div class="col-sm-6 col-lg-3 reveal d2">
-          <div class="dk-card">
-            <div class="dk-ico"><i class="fas fa-clipboard-check"></i></div>
-            <h5>Weekly Tests</h5>
-            <p>Regular chapter tests every week and monthly full-syllabus assessments to track progress.</p>
-          </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal d3">
+        <div class="dk-card">
+          <div class="dk-ico"><i class="fas fa-file-alt"></i></div>
+          <h5>Past Papers & Solutions</h5>
+          <p>Last 10 years' board question papers with detailed solutions to build exam confidence.</p>
         </div>
-        <div class="col-sm-6 col-lg-3 reveal d3">
-          <div class="dk-card">
-            <div class="dk-ico"><i class="fas fa-file-alt"></i></div>
-            <h5>Past Papers & Solutions</h5>
-            <p>Last 10 years' board question papers with detailed solutions to build exam confidence.</p>
-          </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal d4">
+        <div class="dk-card">
+          <div class="dk-ico"><i class="fas fa-comment-dots"></i></div>
+          <h5>Doubt Clearing Sessions</h5>
+          <p>Dedicated Sunday doubt sessions so no question goes unanswered and no concept stays unclear.</p>
         </div>
-        <div class="col-sm-6 col-lg-3 reveal d4">
-          <div class="dk-card">
-            <div class="dk-ico"><i class="fas fa-comment-dots"></i></div>
-            <h5>Doubt Clearing Sessions</h5>
-            <p>Dedicated Sunday doubt sessions so no question goes unanswered and no concept stays unclear.</p>
-          </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal d1">
+        <div class="dk-card">
+          <div class="dk-ico"><i class="fas fa-chart-bar"></i></div>
+          <h5>Progress Reports</h5>
+          <p>Monthly report cards and WhatsApp updates sent to parents with detailed performance analysis.</p>
         </div>
-        <div class="col-sm-6 col-lg-3 reveal d1">
-          <div class="dk-card">
-            <div class="dk-ico"><i class="fas fa-chart-bar"></i></div>
-            <h5>Progress Reports</h5>
-            <p>Monthly report cards and WhatsApp updates sent to parents with detailed performance analysis.</p>
-          </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal d2">
+        <div class="dk-card">
+          <div class="dk-ico"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h5>Expert Faculty</h5>
+          <p>Every course is taught by a subject specialist with 10+ years of dedicated teaching experience.</p>
         </div>
-        <div class="col-sm-6 col-lg-3 reveal d2">
-          <div class="dk-card">
-            <div class="dk-ico"><i class="fas fa-chalkboard-teacher"></i></div>
-            <h5>Expert Faculty</h5>
-            <p>Every course is taught by a subject specialist with 10+ years of dedicated teaching experience.</p>
-          </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal d3">
+        <div class="dk-card">
+          <div class="dk-ico"><i class="fas fa-users"></i></div>
+          <h5>Small Batches</h5>
+          <p>Maximum 20 students per batch ensures personalised attention for every student in every class.</p>
         </div>
-        <div class="col-sm-6 col-lg-3 reveal d3">
-          <div class="dk-card">
-            <div class="dk-ico"><i class="fas fa-users"></i></div>
-            <h5>Small Batches</h5>
-            <p>Maximum 20 students per batch ensures personalised attention for every student in every class.</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 reveal d4">
-          <div class="dk-card">
-            <div class="dk-ico"><i class="fas fa-star"></i></div>
-            <h5>Mock Board Exams</h5>
-            <p>Full-length board-pattern mock exams conducted 2 months before actual board exams.</p>
-          </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal d4">
+        <div class="dk-card">
+          <div class="dk-ico"><i class="fas fa-star"></i></div>
+          <h5>Mock Board Exams</h5>
+          <p>Full-length board-pattern mock exams conducted 2 months before actual board exams.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section class="vtc-sec" style="background:var(--off)">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center reveal">
-          <div class="eyebrow" style="justify-content:center">Enrol Today</div>
-          <h2 class="sec-h">Ready to Start Your <span>Course?</span></h2>
-          <div class="pink-rule cx"></div>
-          <p class="sec-desc mx-auto mb-4">Book a free demo class, attend one session, and decide for yourself. No
-            payment, no pressure.</p>
-          <div class="d-flex flex-wrap justify-content-center gap-3">
-            <a href="admission.html" class="btn-pink"><i class="fas fa-graduation-cap me-2"></i>Apply for Admission</a>
-            <a href="contact.html" class="btn-outline-pk"><i class="fas fa-phone me-2"></i>Talk to Us</a>
-          </div>
+<!-- CTA -->
+<section class="vtc-sec" style="background:var(--off)">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center reveal">
+        <div class="eyebrow" style="justify-content:center">Enrol Today</div>
+        <h2 class="sec-h">Ready to Start Your <span>Course?</span></h2>
+        <div class="pink-rule cx"></div>
+        <p class="sec-desc mx-auto mb-4">Book a free demo class, attend one session, and decide for yourself. No
+          payment, no pressure.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a routerLink="/" fragment="admission-form-section" class="btn-pink"><i class="fas fa-graduation-cap me-2"></i>Apply for Admission</a>
+          <a href="tel:+919371013687" class="btn-outline-pk"><i class="fas fa-phone me-2"></i>Talk to Us</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

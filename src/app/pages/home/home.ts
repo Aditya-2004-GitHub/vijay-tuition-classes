@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Renderer2, OnInit, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -7,12 +7,25 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home implements AfterViewInit{
+export class Home implements AfterViewInit, OnInit, OnDestroy {
     private observer!: IntersectionObserver;
     private counterObserver!: IntersectionObserver;
     constructor(private renderer: Renderer2, private el: ElementRef) {}
 
+    /* IDEA 2: TypeScript Driven Background Carousel Logic (Commented Out) */
+    /*
+    currentSlide = 0;
+    private slideInterval: any;
+    */
+
   ngOnInit(): void {
+
+    /* IDEA 2 Initialization (Commented Out) */
+    /*
+    this.slideInterval = setInterval(() => {
+      this.currentSlide = (this.currentSlide + 1) % 5;
+    }, 4000);
+    */
 
     // Loader
     const hideLoader = () => {
@@ -84,5 +97,20 @@ export class Home implements AfterViewInit{
     elements1.forEach((el: Element) => {
       this.counterObserver.observe(el);
     });
+  }
+
+  /* IDEA 2 Destroy Logic (Commented Out) */
+  ngOnDestroy(): void {
+  /*
+    if (this.slideInterval) {
+      clearInterval(this.slideInterval);
+    }
+  */
+  }
+
+  submitAdmissionForm(stuName: string, gender: string, dob: string, school: string, schoolLoc: string, mothName: string, fathName: string, contact: string, addr: string, city: string, pin: string, parQual: string, parOcc: string) {
+    const msg = `*New Admission Form Submission*\n\n*Student Name:* ${stuName}\n*Gender:* ${gender}\n*Date of Birth:* ${dob}\n*School Name:* ${school}\n*School Location:* ${schoolLoc}\n*Mother's Name:* ${mothName}\n*Father / Guardian Name:* ${fathName}\n*Contact Number:* ${contact}\n*Address:* ${addr}\n*City:* ${city}\n*Pincode:* ${pin}\n*Parents Qualification:* ${parQual}\n*Parents Occupation:* ${parOcc}`;
+    const url = `https://wa.me/919371013687?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
   }
 }

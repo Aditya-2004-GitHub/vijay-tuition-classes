@@ -1,4 +1,7 @@
 /* PAGE HERO */
+a{
+  text-decoration: none;
+}
 .pg-hero {
   background: var(--navy);
   padding: 5rem 0 4rem;

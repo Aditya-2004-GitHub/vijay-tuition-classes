@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-admission',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './admission.html',
   styleUrl: './admission.css',
 })
@@ -88,11 +89,17 @@ export class Admission implements AfterViewInit {
   }
 
   // ✅ Form Submit
-  submitForm(type: string) {
-    if (type === 'demo') {
-      this.showToast('✅ Demo class booked! We will call you shortly.');
-    } else {
-      this.showToast('✅ Enquiry sent! We will WhatsApp you soon.');
-    }
+  submitDemoForm(name: string, studentClass: string, board: string, subject: string, mobile: string, batch: string, date: string) {
+    const msg = `*Free Demo Class Booking*\n\n*Student Name:* ${name}\n*Class:* ${studentClass}\n*Board:* ${board}\n*Subject:* ${subject}\n*Mobile:* ${mobile}\n*Preferred Batch:* ${batch}\n*Date:* ${date}`;
+    const url = `https://wa.me/919371013687?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+    this.showToast('✅ Demo class booked! Opening WhatsApp...');
+  }
+
+  submitEnquiryForm(name: string, mobile: string, studentClass: string, programme: string, message: string, source: string) {
+    const msg = `*New Admission Enquiry*\n\n*Name:* ${name}\n*Mobile:* ${mobile}\n*Class:* ${studentClass}\n*Programme:* ${programme}\n*Message:* ${message}\n*Source:* ${source}`;
+    const url = `https://wa.me/919371013687?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+    this.showToast('✅ Enquiry sent! Opening WhatsApp...');
   }
 }
